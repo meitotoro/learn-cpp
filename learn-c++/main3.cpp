@@ -1,6 +1,6 @@
 #include "animal.h"
 
-int main() {
+int main3() {
 	string cat_name1 = "mimi";
 	string cat_name2 = "meow";
 	string dog_name1 = "wangcai";

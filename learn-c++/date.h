@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <sstream>
+#include <iostream>
 using std::string;
 
 class Date {
@@ -10,6 +11,13 @@ public:
 	int year() const;
 	int month() const;
 	int day() const;
+	template <class OutputPolicy=OutEn>
+	void print() const{
+		OutputPolicy out;
+		string output = out(*this);
+		std::cout<< output<<std::endl;
+	}
+	
 private:
 	int _year;
 	int _month;
@@ -38,9 +46,25 @@ struct OutEn {
 			date << d.day() << "th, ";			
 			break;
 		}		
-		date << d.year();
+		date << d.year()<<" ";
+		int iweek = d.getWeekdayByYearday();
+		string week[] = { "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" };
+		string w = week[iweek];
+		date << w;
 		out = date.str();
 		return out;
 
+	}
+};
+struct OutCh {
+	string operator()(const Date& d) {
+		std::stringstream date;
+		date << d.year() << "年" << d.month() << "月" << d.day() << "日";
+		int iweek = d.getWeekdayByYearday();
+		string week[] = { "星期天","星期一","星期二","星期三","星期四","星期五","星期六" };
+		string w = week[iweek];
+		date << " " << w;
+		string out = date.str();
+		return out;
 	}
 };
