@@ -1,5 +1,5 @@
 #include "date.h"
-int main() {
+int main4() {
 	Date d1(2000, 2, 3);
 	OutEn en;
 	OutCh ch;
