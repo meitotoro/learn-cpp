@@ -131,10 +131,12 @@
   <ItemGroup>
     <ClInclude Include="animal.h" />
     <ClInclude Include="date.h" />
+    <ClInclude Include="list.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="shape.h" />
     <ClInclude Include="tools.h" />
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\TextFile1.txt" />
